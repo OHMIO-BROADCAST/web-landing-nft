@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2022 Frenify
- * Author: Frenify
+ * Copyright (c) 2022 OHMIO Team
+ * Author: OHMIO Team
  * This file is made for CURRENT TEMPLATE
 */
 
