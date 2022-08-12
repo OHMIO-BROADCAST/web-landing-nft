@@ -1,7 +1,7 @@
 
 /*
- * Copyright (c) 2022 OHMIO Team
- * Author: OHMIO Team
+ * Copyright (c) 2022 Frenify
+ * Author: Frenify
  * This file is made for CURRENT TEMPLATE
 */
 
@@ -13,36 +13,36 @@ var MetaPortalFilterArray		= [];
 (function($){
   "use strict";
 	
-	var OHMIO TeamPreloader 	= false;
-  	var OHMIO TeamTime 		= new Date();
-	var OHMIO TeamCounter		= 0;
+	var FrenifyPreloader 	= false;
+  	var FrenifyTime 		= new Date();
+	var FrenifyCounter		= 0;
   
-	var OHMIO TeamMetaPortal = {
+	var FrenifyMetaPortal = {
 		
 		init: function(){
-			OHMIO TeamMetaPortal.ready();
-			OHMIO TeamMetaPortal.menuCenter();
-			OHMIO TeamMetaPortal.imgToSVG();
-			OHMIO TeamMetaPortal.BgImg();
-			OHMIO TeamMetaPortal.totopFixer();
-			OHMIO TeamMetaPortal.slider();
-			OHMIO TeamMetaPortal.headerFixer();
-			OHMIO TeamMetaPortal.fn_cs_counter();
-			OHMIO TeamMetaPortal.video();
-			OHMIO TeamMetaPortal.collection();
-			OHMIO TeamMetaPortal.contactForm();
-			OHMIO TeamMetaPortal.totopScroll();
-			OHMIO TeamMetaPortal.seachSomething();
-			OHMIO TeamMetaPortal.walletAndLeftNavOpener();
-			OHMIO TeamMetaPortal.resizeWalletAndLeftNav();
-			OHMIO TeamMetaPortal.headerAnchor();
-			OHMIO TeamMetaPortal.isotope();
-			OHMIO TeamMetaPortal.qnt();
-			OHMIO TeamMetaPortal.countdown();
-			OHMIO TeamMetaPortal.hold();
-			OHMIO TeamMetaPortal.filterItems();
-			OHMIO TeamMetaPortal.applyFilter();
-			OHMIO TeamMetaPortal.navSubMenu();
+			FrenifyMetaPortal.ready();
+			FrenifyMetaPortal.menuCenter();
+			FrenifyMetaPortal.imgToSVG();
+			FrenifyMetaPortal.BgImg();
+			FrenifyMetaPortal.totopFixer();
+			FrenifyMetaPortal.slider();
+			FrenifyMetaPortal.headerFixer();
+			FrenifyMetaPortal.fn_cs_counter();
+			FrenifyMetaPortal.video();
+			FrenifyMetaPortal.collection();
+			FrenifyMetaPortal.contactForm();
+			FrenifyMetaPortal.totopScroll();
+			FrenifyMetaPortal.seachSomething();
+			FrenifyMetaPortal.walletAndLeftNavOpener();
+			FrenifyMetaPortal.resizeWalletAndLeftNav();
+			FrenifyMetaPortal.headerAnchor();
+			FrenifyMetaPortal.isotope();
+			FrenifyMetaPortal.qnt();
+			FrenifyMetaPortal.countdown();
+			FrenifyMetaPortal.hold();
+			FrenifyMetaPortal.filterItems();
+			FrenifyMetaPortal.applyFilter();
+			FrenifyMetaPortal.navSubMenu();
 		},
 		
 		menuCenter: function(){
@@ -73,12 +73,12 @@ var MetaPortalFilterArray		= [];
 				var s = e.siblings('.sub-menu');
 				var svg = $('.metaportal_fn_leftnav .nav_holder .icon').html();
 				if(s.length){
-					OHMIO TeamCounter++;
+					FrenifyCounter++;
 					if(!s.find('>li>.prev').length){
 						s.prepend('<li><a href="#" class="prev"><span class="creative_link">'+svg+e.text()+'</span></a></li>');
 					}
-					$('.metaportal_fn_leftnav .nav_holder > ul').css({transform: 'translateX(-'+(100*OHMIO TeamCounter)+'%)'});
-					OHMIO TeamMetaPortal.previousItems();
+					$('.metaportal_fn_leftnav .nav_holder > ul').css({transform: 'translateX(-'+(100*FrenifyCounter)+'%)'});
+					FrenifyMetaPortal.previousItems();
 					return false;
 				}
 			});
@@ -86,8 +86,8 @@ var MetaPortalFilterArray		= [];
 		
 		previousItems: function(){
 			$('.metaportal_fn_leftnav .nav_holder .prev').off().on('click',function(){
-				OHMIO TeamCounter--;
-				$('.metaportal_fn_leftnav .nav_holder > ul').css({transform: 'translateX(-'+(100*OHMIO TeamCounter)+'%)'});
+				FrenifyCounter--;
+				$('.metaportal_fn_leftnav .nav_holder > ul').css({transform: 'translateX(-'+(100*FrenifyCounter)+'%)'});
 				return false;
 			});	
 		},
@@ -103,7 +103,7 @@ var MetaPortalFilterArray		= [];
 		applyFilter: function(){
 			
 			// initialization isotope function to our items
-			OHMIO TeamMetaPortal.isotopeCollection();
+			FrenifyMetaPortal.isotopeCollection();
 			
 			// left filter on click function
 			$('.metaportal_fn_filters .checkbox').off().on('click',function(){
@@ -153,10 +153,10 @@ var MetaPortalFilterArray		= [];
 					MetaPortalFilterArray.push(id);
 					
 					// recall image to svg functions, because we have added new button where has an svg icon
-					OHMIO TeamMetaPortal.imgToSVG();
+					FrenifyMetaPortal.imgToSVG();
 					
 					// recall remove filter function, because we have added new filter
-					OHMIO TeamMetaPortal.removeFilter();
+					FrenifyMetaPortal.removeFilter();
 				}
 				// if clicked item has already clicked and clicked second time
 				else{
@@ -186,13 +186,13 @@ var MetaPortalFilterArray		= [];
 				}
 				
 				
-				OHMIO TeamMetaPortal.recallGridAfterFiltering();
+				FrenifyMetaPortal.recallGridAfterFiltering();
 				
 				return false;
 			});
 			
 			// call remove filter function
-			OHMIO TeamMetaPortal.removeFilter();
+			FrenifyMetaPortal.removeFilter();
 		},
 		
 		recallGridAfterFiltering: function(clear){
@@ -242,7 +242,7 @@ var MetaPortalFilterArray		= [];
 				if(index !== -1){
 					MetaPortalFilterArray.splice(index, 1);
 				}
-				OHMIO TeamMetaPortal.recallGridAfterFiltering();
+				FrenifyMetaPortal.recallGridAfterFiltering();
 				return false;
 			});
 			
@@ -256,7 +256,7 @@ var MetaPortalFilterArray		= [];
 				resultBox.find('.result_item').remove();
 				e.remove();
 				filterBox.find('.checkbox').removeClass('selected').find('input[type="checkbox"]').prop('checked','');
-				OHMIO TeamMetaPortal.recallGridAfterFiltering('clear');
+				FrenifyMetaPortal.recallGridAfterFiltering('clear');
 				return false;
 			});
 		},
@@ -475,9 +475,9 @@ var MetaPortalFilterArray		= [];
 		},
 		
 		preloader: function(){
-			if(OHMIO TeamPreloader){return false;}OHMIO TeamPreloader = true;
+			if(FrenifyPreloader){return false;}FrenifyPreloader = true;
   			var date2 			= new Date();
-			var difference		= date2-OHMIO TeamTime;
+			var difference		= date2-FrenifyTime;
 			var waitTime 		= 3000;
 			if(difference < waitTime){
 				waitTime -= difference;
@@ -677,7 +677,7 @@ var MetaPortalFilterArray		= [];
 				// init slider animation
 				var myInterval 		= setInterval(function(){
 					activeIndex++;
-					activeIndex 	= OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+					activeIndex 	= FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 				},speed);
 				
 				
@@ -685,10 +685,10 @@ var MetaPortalFilterArray		= [];
 				slider.find('.slider_nav .prev').off().on('click',function(){
 					clearInterval(myInterval);
 					activeIndex--;
-					activeIndex 	= OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+					activeIndex 	= FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 					myInterval 		= setInterval(function(){
 						activeIndex++;
-						activeIndex = OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+						activeIndex = FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 					},speed);
 					return false;
 				});
@@ -697,10 +697,10 @@ var MetaPortalFilterArray		= [];
 				slider.find('.slider_nav .next').off().on('click',function(){
 					clearInterval(myInterval);
 					activeIndex++;
-					activeIndex 	= OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+					activeIndex 	= FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 					myInterval 		= setInterval(function(){
 						activeIndex++;
-						activeIndex = OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+						activeIndex = FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 					},speed);
 					return false;
 				});
@@ -716,10 +716,10 @@ var MetaPortalFilterArray		= [];
 						return false;
 					}
 					clearInterval(myInterval);
-					activeIndex 	= OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+					activeIndex 	= FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 					myInterval 		= setInterval(function(){
 						activeIndex++;
-						activeIndex = OHMIO TeamMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
+						activeIndex = FrenifyMetaPortal.sliderDo(sliderTop,sliderBottom,activeIndex);
 					},speed);
 					return false;
 				});
@@ -785,40 +785,40 @@ var MetaPortalFilterArray		= [];
 	
 	// READY Functions
 	$(document).ready(function(){
-		OHMIO TeamMetaPortal.init();
+		FrenifyMetaPortal.init();
 		setTimeout(function(){
-			OHMIO TeamMetaPortal.isotope();
-			OHMIO TeamMetaPortal.isotopeCollection();
+			FrenifyMetaPortal.isotope();
+			FrenifyMetaPortal.isotopeCollection();
 		},150);
 	});
 	
 	// RESIZE Functions
 	$(window).on('resize',function(){
-		OHMIO TeamMetaPortal.resizeWalletAndLeftNav();
-		OHMIO TeamMetaPortal.totopFixer();
-		OHMIO TeamMetaPortal.isotope();
-		OHMIO TeamMetaPortal.isotopeCollection();
+		FrenifyMetaPortal.resizeWalletAndLeftNav();
+		FrenifyMetaPortal.totopFixer();
+		FrenifyMetaPortal.isotope();
+		FrenifyMetaPortal.isotopeCollection();
 	});
 	
 	// LOAD Functions
 	$(window).on('load',function(){
-		OHMIO TeamMetaPortal.preloader();
-		OHMIO TeamMetaPortal.isotope();
-		OHMIO TeamMetaPortal.isotopeCollection();
+		FrenifyMetaPortal.preloader();
+		FrenifyMetaPortal.isotope();
+		FrenifyMetaPortal.isotopeCollection();
 		
 		setTimeout(function(){
 			
-			OHMIO TeamMetaPortal.isotope();
-			OHMIO TeamMetaPortal.isotopeCollection();
+			FrenifyMetaPortal.isotope();
+			FrenifyMetaPortal.isotopeCollection();
 		},200);
 	});
 	
 	$(window).on('scroll',function(){
-		OHMIO TeamMetaPortal.headerFixer();
+		FrenifyMetaPortal.headerFixer();
 	});
 	
   	window.addEventListener("load", function(){
-		OHMIO TeamMetaPortal.preloader();
+		FrenifyMetaPortal.preloader();
 	});
 	
 })(jQuery);
